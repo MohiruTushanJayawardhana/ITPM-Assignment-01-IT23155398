@@ -1,147 +1,85 @@
-<<<<<<< HEAD
-# ITPM-Assignment-01-IT23155398
-=======
-\# ITPM Assignment 1: Transliteration Accuracy Testing (Option 1)
+# ITPM Assignment 1: Transliteration Accuracy Testing (Option 1)
 
+This repository contains the automated test scripts and results for **Assignment 1 (Option 1)** of the **IT3040 - Information Technology Project Management (ITPM)** module at the Sri Lanka Institute of Information Technology (SLIIT).
 
+## 📌 Project Overview
 
-This repository contains the automated test scripts and results for \*\*Assignment 1 (Option 1)\*\* of the \*\*IT3040 - Information Technology Project Management (ITPM)\*\* module at the Sri Lanka Institute of Information Technology (SLIIT).
+The objective of this assignment is to evaluate the transliteration accuracy of the Chat Sinhala function on the PixelSuite platform. The goal is to identify and automate **50 negative test cases** where the system fails to correctly convert informal, chat-style Singlish text into Standard Sinhala.
 
+* **Target Application:** https://www.pixelssuite.com/chat-translator
+* **Automation Framework:** Python with Playwright
+* **Data Management:** OpenPyXL (Excel integration)
 
+## 📁 Repository Structure
 
-\## 📌 Project Overview
-
-The objective of this assignment is to evaluate the transliteration accuracy of the Chat Sinhala function on the PixelSuite platform. The goal is to identify and automate \*\*50 negative test cases\*\* where the system fails to correctly convert informal, chat-style Singlish text into Standard Sinhala.
-
-
-
-\- \*\*Target Application:\*\* \[PixelSuite Chat Translator](https://www.pixelssuite.com/chat-translator)
-
-\- \*\*Automation Framework:\*\* Python with \[Playwright](https://playwright.dev/python/)
-
-\- \*\*Data Management:\*\* OpenPyXL (Excel integration)
-
-
-
-\## 📁 Repository Structure
-
+```
 📦 ITPM-Assignment-01
+ ┣ 📜 IT23155398_Assignment 1 - Test cases.xlsx   # Contains all 50 negative test cases and results
+ ┣ 📜 IT23155398_test_automation.py               # Main Playwright automation script
+ ┣ 📜 README.md                                   # Project documentation
+ ┗ 📜 [Optional] Other project files              # Additional configurations if any
+```
 
-&#x20;┣ 📜 Assignment 1 - Test cases.xlsx   # The Excel file containing all 50 negative test cases and automated results.
-
-&#x20;┣ 📜 test\_automation.py               # The main Playwright Python script for executing the automation.
-
-&#x20;┣ 📜 README.md                        # Project documentation and setup instructions.
-
-&#x20;┗ 📜 \[Optional] Other project files   # Any additional configuration files.
-
-
-
-\## 🛠️ Prerequisites
+## 🛠️ Prerequisites
 
 Before running the automated tests, ensure your system meets the following requirements:
 
-1\. \*\*Python:\*\* Version 3.11 or 3.12 is recommended (Python 3.13+ is also supported).
+1. **Python:** Version 3.11 or 3.12 recommended (3.13+ supported)
+2. **Web Browser:** Google Chrome
+3. **Operating System:** Windows / macOS / Linux
 
-2\. \*\*Web Browser:\*\* Google Chrome is recommended.
+## 🚀 Installation & Setup Guide
 
-3\. \*\*OS:\*\* Windows / macOS / Linux.
+Follow these steps to set up the environment and run the tests.
 
+### Step 1: Clone the repository
 
-
-\## 🚀 Installation \& Setup Guide
-
-Follow these instructions precisely to set up the environment and run the tests.
-
-
-
-\*\*Step 1: Clone the repository\*\*
-
-Open your Command Prompt or Terminal and run:
-
-bash
-
+```bash
 git clone https://github.com/MohiruTushanJayawardhana/ITPM-Assignment-01-IT23155398.git
-
 cd ITPM-Assignment-01-IT23155398
+```
 
+### Step 2: Install required dependencies
 
-
-
-
-\*\*Step 2: Install required dependencies\*\*
-
-It is highly recommended to ensure your `pip` is up to date before installing the required packages:
-
-bash
-
+```bash
 python -m pip install -U pip
-
 pip install playwright openpyxl
+```
 
+### Step 3: Install Playwright browsers
 
-
-
-
-\*\*Step 3: Install Playwright Browsers\*\*
-
-Run the following command to download the necessary Chromium browser binaries for Playwright:
-
-bash
-
+```bash
 playwright install
+```
 
+## ▶️ Running the Automated Tests
 
+Before executing the script, **ensure that the `Assignment 1 - Test cases.xlsx` file is CLOSED** to prevent permission errors.
 
+```bash
+python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open```
 
+### Script Execution Details
 
-\## ▶️ Running the Automated Tests
+* Reads Singlish inputs from the Excel file
+* Launches a Chromium browser using Playwright
+* Automates typing on the PixelSuite website
+* Extracts transliterated output
+* Writes results back into the Excel file (`Actual output` column)
+* Updates the `Status` column automatically
+* Continues execution until all valid rows are processed
 
-Before executing the script, \*\*ensure that the `IT23155398_Assignment 1 - Test cases.xlsx` file is CLOSED\*\* to prevent permission errors.
+## 📊 Test Case Design (Methodology)
 
+The 50 negative test cases were designed to expose weaknesses in the transliteration system.
 
+* **Coverage:** Includes at least two test cases for each of the 24 Singlish input types (e.g., questions, emojis, abbreviations, romanization variants)
+* **Length Variation:** Categorized into Short (S), Medium (M), and Long (L) inputs
+* **Goal:** All test cases are expected to produce a **FAIL** result (System Output ≠ Expected Output)
 
-Run the following command in your terminal:
+## 👤 Author
 
-bash
-
-python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
-
-
-
-\### Script Execution Details:
-
-\- The script reads the Singlish inputs from the specified Excel file.
-
-\- It launches a Chromium browser and automates the typing process on the PixelSuite website.
-
-\- The transliterated output is scraped and saved back into the `Actual output` column of the Excel file.
-
-\- The `Status` column is automatically updated based on the results.
-
-\- The process runs continuously until all valid rows are tested.
-
-
-
-\## 📊 Test Case Design (Methodology)
-
-The 50 negative test cases were carefully designed to expose weaknesses in the transliteration logic. The selection criteria strictly adhere to the assignment guidelines:
-
-\- \*\*Coverage:\*\* Includes at least two test cases for each of the 24 specified Singlish Input Types (e.g., Question forms, Emojis, English Abbreviations, Romanization variants).
-
-\- \*\*Length Variation:\*\* Inputs are categorized into Short (S), Medium (M), and Long (L) lengths.
-
-\- \*\*Goal:\*\* All 50 scenarios are intended to trigger a \*\*FAIL\*\* status (System Output ≠ Expected Output).
-
-
-
-\## 👤 Author
-
-\- \*\*Name:\*\* Jayawardhana D.V.M.T
-
-\- \*\*Student ID:\*\* IT23155398
-
-\- \*\*Module:\*\* IT3040 - ITPM (Year 3, Semester 2)
-
-\- \*\*Institution:\*\* Sri Lanka Institute of Information Technology (SLIIT)
->>>>>>> 465d58a (Initial commit - Test automation project files)
+* **Name:** Jayawardhana D.V.M.T
+* **Student ID:** IT23155398
+* **Module:** IT3040 - Information Technology Project Management (ITPM)
+* **Institution:** Sri Lanka Institute of Information Technology (SLIIT)
