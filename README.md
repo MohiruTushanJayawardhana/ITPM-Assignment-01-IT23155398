@@ -57,7 +57,8 @@ playwright install
 Before executing the script, **ensure that the `Assignment 1 - Test cases.xlsx` file is CLOSED** to prevent permission errors.
 
 ```bash
-python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open```
+python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
+```
 
 ### Script Execution Details
 
