@@ -63,6 +63,12 @@ Before executing the script, **ensure that the `Assignment 1 - Test cases.xlsx` 
 ```bash
 python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
 ```
+If the script fails to locate the Excel file, provide the full file path as shown below:
+
+--excel "File Path:\Folder Name\...\IT23155398_Assignment 1 - Test cases.xlsx"
+
+Eg:
+python "IT23155398_test_automation.py" --excel "C:\ITPM A1\ITPM-Assignment-01-IT23155398\IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
 
 ### Script Execution Details
 
