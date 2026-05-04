@@ -65,10 +65,12 @@ python "IT23155398_test_automation.py" --excel "IT23155398_Assignment 1 - Test c
 ```
 ## If the script fails to locate the Excel file, provide the full file path as shown below:
 
-### --excel "File Path:\Folder Name\ITPM-Assignment-01-IT23155398\IT23155398_Assignment 1 - Test cases.xlsx"
+### Example usage:
 
-Eg:
-python "IT23155398_test_automation.py" --excel "C:\ITPM A1\ITPM-Assignment-01-IT23155398\IT23155398_Assignment 1 - Test cases.xlsx" --url "https://www.pixelssuite.com/chat-translator" --wait-ms 5000 --type-delay-ms 80 --slow-mo-ms 200 --save-every 1 --keep-open
+--excel "C:\Path\To\Folder\ITPM-Assignment-01-IT23155398\IT23155398_Assignment 1 - Test cases.xlsx"
+
+### Example:
+--excel "C:\Users\User\Documents\ITPM 2026\ITPM-Assignment-01-IT23155398\IT23155398_Assignment 1 - Test cases.xlsx"
 
 ### Script Execution Details
 
