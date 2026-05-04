@@ -36,6 +36,8 @@ Follow these steps to set up the environment and run the tests.
 
 ```bash
 git clone https://github.com/MohiruTushanJayawardhana/ITPM-Assignment-01-IT23155398.git
+```
+```bash
 cd ITPM-Assignment-01-IT23155398
 ```
 
@@ -43,6 +45,8 @@ cd ITPM-Assignment-01-IT23155398
 
 ```bash
 python -m pip install -U pip
+```
+```bash
 pip install playwright openpyxl
 ```
 
